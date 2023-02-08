@@ -1,0 +1,48 @@
+{
+  "name": "web-optimizer",
+  "displayName": "Web Optimizer",
+  "description": "Optimizer your web assets within your Visual Studio Code",
+  "version": "0.0.3",
+  "publisher": "doggy8088",
+  "icon": "icon.png",
+  "repository": "https://github.com/doggy8088/web-optimizer",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "preview": true,
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./src/extension",
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "code-snippets"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "vsce:publish": "vsce publish",
+    "vsce:package": "vsce package",
+    "vsce:publish:patch": "vsce publish patch",
+    "vsce:publish:minor": "vsce publish minor",
+    "vsce:publish:major": "vsce publish major"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.13.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "vsce": "^2.15.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/html.json"
+      }
+    ]
+  }
+}

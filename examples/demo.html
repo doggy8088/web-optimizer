@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+  </head>
+  <body>
+    <h2>顯示圖片</h2>
+
+    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=200&h=200&q=80&txt=200&txt-size=20&fm=jpg"
+         width="200" height="200" alt="Cat" title="顯示圖片" loading="lazy" decoding="async" />
+
+    <h2>依據螢幕解析度顯示不同圖片 (density descriptor)</h2>
+
+    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=200&h=200&q=80&txt=200&txt-size=20&fm=jpg"
+         width="200" height="200" alt="Cat" title="依據螢幕解析度顯示不同圖片" loading="lazy" decoding="async"
+         srcset="
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=200&h=200&q=80&txt=200%20%281x%29&txt-size=20&fm=jpg,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=300&h=300&q=80&txt=300%20%281.5x%29&txt-size=30&fm=jpg 1.5x,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=400&h=400&q=80&txt=400%20%282x%29&txt-size=40&fm=jpg 2x,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=600&h=600&q=80&txt=600%20%283x%29&txt-size=60&fm=jpg 3x
+         " />
+          <!-- 只要 srcset 使用了 density descriptor 就不需要定義 sizes 屬性 -->
+
+    <h2>依據螢幕大小顯示不同圖片 (width descriptor)</h2>
+
+    <ol>
+        <li>320px - 480px: Mobile devices</li>
+        <li>481px - 768px: iPads, Tablets</li>
+        <li>769px - 1024px: Small screens, laptops</li>
+        <li>1025px - 1200px: Desktops, large screens</li>
+        <li>1201px and more - Extra large screens, TV</li>
+    </ol>
+
+    <div><strong style="color: red">預設會顯示當前螢幕解析度最適合的尺寸，並隨著螢幕大小縮放寬度，只有寬度變大才會重新下載圖片，寬度變窄就不會刻意下載解析度低的圖片！</strong></div>
+
+    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=200&h=200&q=80&txt=200&txt-size=20&fm=jpg"
+         alt="Cat" title="依據螢幕大小顯示不同圖片" loading="lazy" decoding="async"
+         srcset="
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=200&h=200&q=80&txt=200&txt-size=20&fm=jpg 200w,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=320&h=320&q=80&txt=320&txt-size=30&fm=jpg 320w,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=481&h=481&q=80&txt=481&txt-size=40&fm=jpg 481w,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=769&h=769&q=80&txt=769&txt-size=60&fm=jpg 769w,
+                 https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fit=clamp&w=1025&h=1025&q=80&txt=1025&txt-size=60&fm=jpg 1025w
+                 "
+         sizes="
+                (max-width: 320px) 200px,
+                (max-width: 481px) 320px,
+                (max-width: 769px) 481px,
+                (max-width: 1025px) 769px,
+                1025px
+                " />
+          <!-- 只要 srcset 使用了 width descriptor 就一定要寫 sizes -->
+          <!-- 這裡 srcset 不能混用 width descriptor 與 density descriptors -->
+          <!-- 這裡 sizes 的最後一個尺寸不能包含 Media Query 語法！ -->
+
+  </body>
+</html>

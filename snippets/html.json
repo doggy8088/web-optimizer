@@ -1,0 +1,124 @@
+{
+	"link rel=preconnect": {
+		"prefix": "link-preconnect",
+		"body": [
+			"<link rel=\"preconnect\" href=\"${1:https://connect.facebook.net}\">",
+			"$0"
+		],
+		"description": "Specifies that the user agent should preemptively connect to the target resource's origin."
+	},
+	"link rel=preconnect common": {
+		"prefix": "link-preconnect-common",
+		"body": [
+			"<!-- Google Fonts -->",
+			"<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"/>",
+			"<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"anonymous\"/>",
+			"<!-- Google Analytics -->",
+			"<link rel=\"preconnect\" href=\"https://www.google-analytics.com\"/>",
+			"<!-- Google Tag Manager -->",
+			"<link rel=\"preconnect\" href=\"https://www.googletagmanager.com\"/>",
+			"<!-- Facebook SDK -->",
+			"<link rel=\"preconnect\" href=\"https://connect.facebook.net\"/>",
+			"<!-- Twitter -->",
+			"<link rel=\"preconnect\" href=\"https://analytics.twitter.com\"/>",
+			"$0"
+		],
+		"description": "Specifies that the user agent should preemptively connect to the common target resource's origin."
+	},
+	"img srcset": {
+		"prefix": "img-srcset",
+		"body": [
+			"<img src=\"${1:/images/image72.png}\" alt=\"${2:A meaningful alternate descriptions}\"",
+			"     srcset=\"${3:/images/image144.png} 2x\"/>",
+			"$0"
+		],
+		"description": "It will be loaded instead of the src image on high-resolution devices."
+	},
+	"img srcset sizes": {
+		"prefix": "img-srcset-sizes",
+		"body": [
+			"<img src=\"${1:/images/image200.png}\" alt=\"${2:A meaningful alternate descriptions}\"",
+			"  srcset=\"${3:/images/image200.png 200w}, ${4:/images/image400.png 400w}\"",
+			"  sizes=\"${5:(max-width: 600px) 200px}, ${6:50vw}\" />",
+			"$0"
+		],
+		"description": "The src attribute is ignored in user agents that support srcset when w descriptors are included. When the (max-width: 600px) media condition matches, the 200 pixel-wide image will load (it is the one that matches 200px most closely), otherwise the other image will load."
+	},
+	"picture": {
+		"prefix": "picture-type",
+		"body": [
+			"<picture>",
+			"    <source srcset=\"${1:image}.webp\" type=\"image/webp\">",
+			"    <source srcset=\"${1}.avif\" type=\"image/avif\">",
+			"    <img src=\"${1}.jpg\" alt=\"${2}\">",
+			"</picture>",
+			"$0"
+		],
+		"description": "The <picture> HTML element"
+	},
+	"picture:media": {
+		"prefix": "picture-media",
+		"body": [
+			"<picture>",
+			"    <source srcset=\"${1:large}.webp\" media=\"(min-width: 992px)\" type=\"image/webp\">",
+			"    <source srcset=\"${1}.jpg\" media=\"(min-width: 992px)\" type=\"image/jpeg\">",
+			"    <img src=\"${2:small}.jpg\" alt=\"${3}\">",
+			"</picture>",
+			"$0"
+		],
+		"description": "The <picture> HTML element with Media Query"
+	},
+	"The <picture> HTML element contains zero or more <source> elements and one <img> element to offer alternative versions of an image for different display/device scenarios.": {
+		"prefix": "picture:media",
+		"body": [
+			"<picture>",
+			"    <source srcset=\"",
+			"        ${1:image}.jpg,",
+			"        ${1}@1.5x.jpg 1.5x,",
+			"        ${1}@2x.jpg 2x,",
+			"        ${1}@3x.jpg 3x",
+			"    \">",
+			"    <img src=\"${1}.jpg\" alt=\"${3}\">",
+			"</picture>",
+			"$0"
+		],
+		"description": "The <picture> HTML element contains zero or more <source> elements and one <img> element to offer alternative versions of an image for different display/device scenarios."
+	},
+	"SEO Meta Tags": {
+		"prefix": "meta:seo",
+		"body": [
+			"<meta charset=\"UTF-8\">",
+			"<title>${1:This is the title of the page.}</title>",
+			"<meta name=\"description\" content=\"${2:Place the meta description text here.}\">",
+			"$0"
+		],
+		"description": "SEO Meta Tags"
+	},
+	"OpenGraph Meta Tags": {
+		"prefix": "meta:og",
+		"body": [
+			"<!-- https://ogp.me/ -->",
+			"<meta property=\"og:title\" content=\"${1:Page Title}\">",
+			"<meta property=\"og:type\" content=\"${2|website,article,book,profile|}\">",
+			"<meta property=\"og:url\" content=\"${3:https://}\">",
+			"<meta property=\"og:image\" content=\"${4:https://}\">",
+			"<meta property=\"og:description\" content=\"${5}\">",
+			"$0"
+		],
+		"description": "OpenGraph Meta Tags"
+	},
+	"Twitter Meta Tags (Summary Card with Large Image)": {
+		"prefix": "meta:twitter",
+		"body": [
+			"<!-- https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image -->",
+			"<meta property=\"twitter:title\" content=\"${1:Page Title}\">",
+			"<meta property=\"twitter:card\" content=\"summary_large_image\">",
+			"<meta property=\"twitter:url\" content=\"${2:https://}\">",
+			"<meta property=\"twitter:description\" content=\"${3}\">",
+			"<meta property=\"twitter:image\" content=\"${4:https://}\">",
+			"<meta property=\"twitter:image:alt\" content=\"${5}\">",
+			"$0"
+		],
+		"description": "Twitter Meta Tags (Summary Card with Large Image)"
+	}
+}
