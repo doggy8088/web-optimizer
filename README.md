@@ -16,6 +16,20 @@ Head
 | ------------------------ | ------------------------------------------------------------------------------------------------- |
 | `link-preconnect`        | Specifies that the user agent should preemptively connect to the target resource's origin.        |
 | `link-preconnect-common` | Specifies that the user agent should preemptively connect to the common target resource's origin. |
+| `link-preload`           | Specifies that the user agent should preload resource.                                            |
+| `link-preload-type`      | Specifies that the user agent should preload resource including a MIME type.                      |
+
+- [rel=preconnect - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preconnect)
+- [rel=preload - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload)
+
+Image
+
+| Prefix               | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `img-srcset-density` | The `<img>` HTML element with `srcset`                       |
+| `img-srcset-sizes`   | The `<img>` HTML element with `srcset` and `sizes`           |
+| `picture-type`       | The `<picture>` and `<source>` HTML element                  |
+| `picture-type-media` | The `<picture>` and `<source>` HTML element with Media Query |
 
 SEO
 
@@ -24,16 +38,6 @@ SEO
 | `meta:seo`     | SEO Meta Tags       |
 | `meta:og`      | OpenGraph Meta Tags |
 | `meta:twitter` | Twitter Meta Tags   |
-
-Image
-
-| Prefix               | Description                                                  |
-| -------------------- | ------------------------------------------------------------ |
-| `img-srcset`         | The `<img>` HTML element with `srcset`                       |
-| `img-srcset-sizes`   | The `<img>` HTML element with `srcset` and `sizes`           |
-| `picture-type`       | The `<picture>` and `<source>` HTML element                  |
-| `picture-type-media` | The `<picture>` and `<source>` HTML element with Media Query |
-| `picture-srcset-2x`  | The `<picture>` and `<source>` HTML element with Media Query |
 
 ## Contributing
 

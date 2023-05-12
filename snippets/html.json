@@ -1,4 +1,20 @@
 {
+	"link rel=preload": {
+		"prefix": "link-preload",
+		"body": [
+			"<link rel=\"preload\" href=\"${1:script.js}\" as=\"${2|script,style,image,video,audio,document,embed,font,fetch,object,track,worker|}\">",
+			"$0"
+		],
+		"description": "Specifies that the user agent should preload resource. Note: font and fetch preloading requires the crossorigin attribute to be set."
+	},
+	"link rel=preload type": {
+		"prefix": "link-preload-type",
+		"body": [
+			"<link rel=\"preload\" href=\"${1:image.avif}\" as=\"${2|image,video,audio,font|}\" type=\"${3|image/webp,image/avif,video/mp4,video/webm,video/ogg,audio/webm,audio/ogg,audio/wav,audio/wave,font/woff2|} ${4:crossorigin}\">",
+			"$0"
+		],
+		"description": "Specifies that the user agent should preload resource including a MIME type. Note: font and fetch preloading requires the crossorigin attribute to be set."
+	},
 	"link rel=preconnect": {
 		"prefix": "link-preconnect",
 		"body": [
@@ -26,10 +42,16 @@
 		"description": "Specifies that the user agent should preemptively connect to the common target resource's origin."
 	},
 	"img srcset": {
-		"prefix": "img-srcset",
+		"prefix": "img-srcset-density",
 		"body": [
 			"<img src=\"${1:/images/image72.png}\" alt=\"${2:A meaningful alternate descriptions}\"",
-			"     srcset=\"${3:/images/image144.png} 2x\"/>",
+			"     width=\"${3:72}\" height=\"${4:72}\"",
+			"     srcset=\"",
+			"            ${5:/images/image.png},",
+			"            ${6:/images/image.png@1.5x} 1.5x,",
+			"            ${7:/images/image.png@2x} 2x,",
+			"            ${8:/images/image.png@3x} 3x",
+			"            \"/>",
 			"$0"
 		],
 		"description": "It will be loaded instead of the src image on high-resolution devices."
@@ -44,7 +66,7 @@
 		],
 		"description": "The src attribute is ignored in user agents that support srcset when w descriptors are included. When the (max-width: 600px) media condition matches, the 200 pixel-wide image will load (it is the one that matches 200px most closely), otherwise the other image will load."
 	},
-	"picture": {
+	"picture-type": {
 		"prefix": "picture-type",
 		"body": [
 			"<picture>",
@@ -56,8 +78,8 @@
 		],
 		"description": "The <picture> HTML element"
 	},
-	"picture:media": {
-		"prefix": "picture-media",
+	"picture-type-media": {
+		"prefix": "picture-type-media",
 		"body": [
 			"<picture>",
 			"    <source srcset=\"${1:large}.webp\" media=\"(min-width: 992px)\" type=\"image/webp\">",
@@ -67,22 +89,6 @@
 			"$0"
 		],
 		"description": "The <picture> HTML element with Media Query"
-	},
-	"The <picture> HTML element contains zero or more <source> elements and one <img> element to offer alternative versions of an image for different display/device scenarios.": {
-		"prefix": "picture:media",
-		"body": [
-			"<picture>",
-			"    <source srcset=\"",
-			"        ${1:image}.jpg,",
-			"        ${1}@1.5x.jpg 1.5x,",
-			"        ${1}@2x.jpg 2x,",
-			"        ${1}@3x.jpg 3x",
-			"    \">",
-			"    <img src=\"${1}.jpg\" alt=\"${3}\">",
-			"</picture>",
-			"$0"
-		],
-		"description": "The <picture> HTML element contains zero or more <source> elements and one <img> element to offer alternative versions of an image for different display/device scenarios."
 	},
 	"SEO Meta Tags": {
 		"prefix": "meta:seo",
