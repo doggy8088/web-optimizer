@@ -50,9 +50,7 @@
 
     image@2x.png -> image@1x.png
 
-9. Code Action: `<img>` to `<picture>`
-
-10. Explorer: Shift+Drag `image.png` to Editor, then generate `<picture>` tag automatically.
+9. Explorer: Shift+Drag `image.png` to Editor, then generate `<picture>` tag automatically.
 
     自動判斷同資料夾有沒有相對應不同 width & density 的圖片，並自動產生 `<img>` tag + `srcset` attribute
 

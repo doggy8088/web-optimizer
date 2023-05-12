@@ -2,7 +2,7 @@
   "name": "web-optimizer",
   "displayName": "Web Optimizer",
   "description": "Optimizer your web assets within your Visual Studio Code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "doggy8088",
   "icon": "icon.png",
   "repository": "https://github.com/doggy8088/web-optimizer",

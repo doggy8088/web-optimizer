@@ -10,7 +10,7 @@
 	"link rel=preload type": {
 		"prefix": "link-preload-type",
 		"body": [
-			"<link rel=\"preload\" href=\"${1:image.avif}\" as=\"${2|image,video,audio,font|}\" type=\"${3|image/webp,image/avif,video/mp4,video/webm,video/ogg,audio/webm,audio/ogg,audio/wav,audio/wave,font/woff2|} ${4:crossorigin}\">",
+			"<link rel=\"preload\" href=\"${1:image.avif}\" as=\"${2|image,video,audio,font|}\" type=\"${3|image/webp,image/avif,video/mp4,video/webm,video/ogg,audio/webm,audio/ogg,audio/wav,audio/wave,font/woff2|}\" ${4:crossorigin}>",
 			"$0"
 		],
 		"description": "Specifies that the user agent should preload resource including a MIME type. Note: font and fetch preloading requires the crossorigin attribute to be set."
@@ -41,7 +41,7 @@
 		],
 		"description": "Specifies that the user agent should preemptively connect to the common target resource's origin."
 	},
-	"img srcset": {
+	"img-srcset-density": {
 		"prefix": "img-srcset-density",
 		"body": [
 			"<img src=\"${1:/images/image72.png}\" alt=\"${2:A meaningful alternate descriptions}\"",
@@ -56,7 +56,7 @@
 		],
 		"description": "It will be loaded instead of the src image on high-resolution devices."
 	},
-	"img srcset sizes": {
+	"img-srcset-sizes": {
 		"prefix": "img-srcset-sizes",
 		"body": [
 			"<img src=\"${1:/images/image200.png}\" alt=\"${2:A meaningful alternate descriptions}\"",

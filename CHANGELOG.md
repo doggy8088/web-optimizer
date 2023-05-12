@@ -2,7 +2,7 @@
 
 All notable changes to the **Web Optimizer** will be documented in this file.
 
-## 0.1.0 - 2023-05-12
+## 0.1.1 - 2023-05-12
 
 * Add `link-preload` snippet
 * Add `link-preload-type` snippet
